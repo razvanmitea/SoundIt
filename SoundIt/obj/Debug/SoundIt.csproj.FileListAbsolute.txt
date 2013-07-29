@@ -1,0 +1,13 @@
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Debug\SoundIt.dll
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Debug\SoundIt.pdb
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Debug\SoundIt.dll.mdb
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Debug\SoundIt.SoundIt.apk
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Debug\SoundIt.SoundIt-Signed.apk
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\SoundIt.dll
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\SoundIt.pdb
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\android\bin\SoundIt.SoundIt.apk
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\res\layout\main.xml
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\res\values\strings.xml
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\res\drawable\icon.png
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\R.cs.flag
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Debug\uploadflags.txt

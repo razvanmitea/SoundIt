@@ -1,0 +1,10 @@
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Release\SoundIt.dll
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Release\SoundIt.SoundIt.apk
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\bin\Release\SoundIt.SoundIt-Signed.apk
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\SoundIt.dll
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\android\bin\SoundIt.SoundIt.apk
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\res\layout\main.xml
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\res\values\strings.xml
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\res\drawable\icon.png
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\R.cs.flag
+C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\uploadflags.txt
