@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="SoundIt.SoundIt">
   <uses-sdk android:minSdkVersion="16" />
-  <application android:label="SoundIt" android:name="mono.android.app.Application" android:debuggable="true">
-    <activity android:label="SoundIt" android:name="soundit.Activity1">
+  <application android:label="SoundIt" android:icon="@drawable/music" android:name="mono.android.app.Application" android:debuggable="true">
+    <activity android:label="Welcome to SoundIt" android:name="soundit.MainActivity" />
+    <activity android:label="SoundIt" android:noHistory="true" android:name="soundit.LoadingScreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

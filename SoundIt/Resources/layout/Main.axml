@@ -2,15 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-    <Button
-        android:id="@+id/myButton"
+    android:layout_height="fill_parent"
+    android:id="@+id/frameLayout1"
+    android:showDividers="none">
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/relativeLayout2">
+        <Button
+            android:id="@+id/myButton"
+            android:text="Record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/myButton"
+            android:layout_marginBottom="0.0dp" />
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/myButton"
+            android:autoLink="none"
+            android:textOff="Ө"
+            android:textOn="Off"
+            android:autoText="false" />
+        <Button
+            android:text="Play"
+            android:id="@+id/btnPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/toggleButton1" />
+    </RelativeLayout>
+    <EditText
+        android:inputType="textMultiLine"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/record" />
-    <Button
-        android:text="Play"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnPlay" />
+        android:id="@+id/editText1"
+        android:linksClickable="true"
+        android:phoneNumber="false"
+        android:password="false"
+        android:textIsSelectable="false"
+        android:editable="false" />
 </LinearLayout>

@@ -8,3 +8,16 @@ C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\res\values\string
 C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\res\drawable\icon.png
 C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\R.cs.flag
 C:\Users\razvan\Documents\Projects\SoundIt\SoundIt\obj\Release\uploadflags.txt
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\bin\Release\SoundIt.dll
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\bin\Release\SoundIt.SoundIt.apk
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\bin\Release\SoundIt.SoundIt-Signed.apk
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\SoundIt.dll
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\android\bin\SoundIt.SoundIt.apk
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\res\layout\main.xml
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\res\values\strings.xml
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\res\drawable\icon.png
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\res\drawable\loading.png
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\res\layout\splashscreen.xml
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\R.cs.flag
+C:\Users\Propanu\Documents\Projects\SoundIt-master\SoundIt\obj\Release\uploadflags.txt
