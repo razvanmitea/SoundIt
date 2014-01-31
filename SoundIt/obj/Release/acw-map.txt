@@ -1,1 +1,2 @@
 SoundIt.Activity1;soundit.Activity1
+SoundIt.LoadingScreen;soundit.LoadingScreen

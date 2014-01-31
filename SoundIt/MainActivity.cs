@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -12,14 +13,16 @@ using System.IO;
 
 namespace SoundIt
 {
-	[Activity (Label = "SoundIt", MainLauncher = true)]
-	public class Activity1 : Activity
+	[Activity (Label = "Welcome to SoundIt")]
+	public class MainActivity : Activity
 	{
 		int count = 1;
 		Int16[] audioBuffer;
 		AudioRecord ar;
 		AudioTrack audioTrack;
 		int bufferSize = 0;
+
+
 		protected override void OnCreate (Bundle bundle)
 		{
 
@@ -32,23 +35,50 @@ namespace SoundIt
 			// and attach an event to it
 			Button buttonRec = FindViewById<Button> (Resource.Id.myButton);
 			Button buttonPlay = FindViewById<Button> (Resource.Id.btnPlay);
+            ToggleButton buttonRecT = FindViewById<ToggleButton> (Resource.Id.toggleButton1);
+            EditText editTextBox = FindViewById<EditText>(Resource.Id.editText1);
 
 			ar = findAudioRecord ();
 			audioBuffer = new Int16[bufferSize];
 			//ar.Release ();
 
+            buttonRecT.Click += (sender, e) => {
+
+                //Worker/recording thread. Should message the UI/main thread whenever buffer gets full.
+                Thread t = new Thread(new ThreadStart(() => {
+                    int i = 0;
+                    //recording loop
+                    while (buttonRecT.Checked) {
+                        Thread.Sleep(3000); //used temporarily for demoing threaded recording/not to be used in the actual implementation 
+                        //needed as we can stop recording while thread is sleeping
+                        if(buttonRecT.Checked)
+                        {
+                            //update UI/main thread
+                            RunOnUiThread(() => editTextBox.Text += (3*i++) + "s ");
+                        }
+                    }
+                }));
+
+                if (buttonRecT.Checked) {
+                    editTextBox.Text += "Recording.. ";
+                    t.Start();
+                }
+                else
+                {
+                    editTextBox.Text += "Stopped.. ";
+                }
+                
+            };
+
 			buttonRec.Click += delegate {
-				
+
 				ar.StartRecording();
 				while (true) {
 					try
 					{
 						// Keep reading the buffer 
 						//while there is audio input.
-						ar.Read(
-							audioBuffer, 
-							0, 
-							audioBuffer.Length);
+						ar.Read(audioBuffer, 0,	audioBuffer.Length);
 
 						if(count++ > audioBuffer.Length)
 						{
@@ -68,7 +98,9 @@ namespace SoundIt
 			buttonPlay.Click += (sender, e) => 
 			{
 				int minimumBufferSize = AudioTrack.GetMinBufferSize(ar.SampleRate, ChannelOut.Mono, Android.Media.Encoding.Pcm16bit);
-                			
+                Log.Debug("SoundIt", "minimumBufferSize = " + minimumBufferSize);
+                Log.Debug("SoundIt", "audioBuffer.Length = " + audioBuffer.Length);
+
 				 audioTrack = new AudioTrack(
 					// Stream type
 					Android.Media.Stream.Music,
@@ -86,18 +118,21 @@ namespace SoundIt
 				audioTrack.Play();
 				audioTrack.Write(audioBuffer, 0, audioBuffer.Length);
 			};
+           
 		}
 
 		public AudioRecord findAudioRecord() 
 		{
 			
-		 int[] mSampleRates = new int[] { 8000, 11025, 22050, 44100 };
+		 //int[] mSampleRates = new int[] { 8000, 11025, 22050, 44100 };
+         int[] mSampleRates = new int[] { 44100, 22050 };
+
 			foreach (int rate in mSampleRates) {
 				foreach (var channelConfig in new ChannelIn[] { ChannelIn.Mono, ChannelIn.Stereo }) {
 					try {
-						Log.Debug ("", "Attempting rate " + rate + "Hz, bits: " + Android.Media.Encoding.Pcm16bit + ", channel: "
-							+ channelConfig);
+						Log.Debug ("SoundIt", "Attempting rate " + rate + "Hz, bits: " + Android.Media.Encoding.Pcm16bit + ", channel: " + channelConfig);
 						bufferSize = AudioRecord.GetMinBufferSize (rate, channelConfig, Android.Media.Encoding.Pcm16bit);
+                        Log.Debug("SoundIt", "Buffer size was set to bufferSize = " + bufferSize);
 
 						if (bufferSize > 0) {
 							// check if we can instantiate and have a success
@@ -114,7 +149,33 @@ namespace SoundIt
 			return null;
 		}
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            //Apparently preloading a menu from a xml doesn't work anymore
+
+            //Log.Debug("SoundIt", "Menu created!");
+            //MenuInflater.Inflate(Resource.Menu.optionsMenu, menu); 
+
+            menu.Add(0, 1, 1, "Quit");
+            return true;
+        }
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case 1: //Quit button
+                    Finish();
+                    return true;
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
     }
+
+
+
 }
 
 
